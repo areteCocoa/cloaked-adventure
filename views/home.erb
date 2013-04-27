@@ -1,0 +1,30 @@
+<html>
+
+  <head>
+    <title>Hello</title>
+    <link href="/style.css" rel="stylesheet" type="text/css">
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+	
+	<script>
+		$(function() {
+			var header = $("h1");
+			var body = $("body");
+			
+			body.keypress(function() {
+				header.fadeToggle();
+			});
+			header.click(function() {
+				rotation();
+			});
+		});
+	</script>
+	
+  </head>
+  
+  <body>
+	  <h1>Thomas Ring</h1>
+	  <h1>another</h1>
+	  <h1>more h1</h1>
+  </body>
+  
+</html>

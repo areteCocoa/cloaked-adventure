@@ -5,11 +5,43 @@ get '/' do
   erb :index   
 end
 
+get '/login' do
+  # @username = params[:username]
+#   @password = params[:password]
+#   if @username == 'thomas'
+#     if @password == 'ring'
+#       redirect "http://google.com"
+#     else 
+#       @error = "Wrong Password"
+#       erb :index
+#     end
+#   else
+#     @error = "Wrong Name"
+#     erb :index
+#   end
+#   
+#   puts @error
+  redirect "/"
+end
+
+post '/login' do
+  @username = params[:username].downcase
+  @password = params[:password]
+  
+  if @username == 'thomas'
+    if @password == 'ring'
+      erb :home
+    else
+      @error = "Wrong Password"
+      erb :index
+    end
+  else
+    @error = "Wrong Username"
+    erb :index
+  end
+end
+
 get '/name' do
   @name = (params[:name] || "Nobody").downcase
-  if @name == "collin"
-    redirect 'http://www.youtube.com/watch?v=oHg5SJYRHA0'
-  else
-    erb :name
-  end
+  erb :name
 end

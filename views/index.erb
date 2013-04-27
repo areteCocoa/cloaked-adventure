@@ -1,14 +1,23 @@
 <html>
-  <head>
-    <title>Hello</title>
-    <link href="/style.css" rel="stylesheet" type="text/css">
-  </head>
-  <body>
-    <h1> Please type in your name: </h1>
-
-    <form action='/name'>
-      <input name='name' />
-      <submit/>
-    </form>
-  </body>
+	<head>
+		<title>Hello</title>
+		<link href="/style.css" rel="stylesheet" type="text/css">	
+	</head>
+	
+	<body>
+		
+		<% if @error %>
+			<div class='error'><%= @error %></div>
+		<% end %>
+		
+		<div class="container">
+			<form action='/login' method=post>
+				<p>Name: <input name='username' /></p>
+				<p>Password: <input name='password' type='password'/></p>
+				
+				<input type='submit' value='Login' style='border: none;'/>
+			</form>
+		</div>
+		
+	</body>
 </html>
