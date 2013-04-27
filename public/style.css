@@ -7,7 +7,9 @@ p, h1, input {
 }
 
 body {
-	background: #7791ff;
+	background: url("/bg.jpeg") no-repeat center center fixed;
+	-webkit-background-size: cover;
+	background-size: cover;
 	vertical-align: middle;
 }
 
@@ -37,7 +39,7 @@ input {
 	box-sizing:border-box;
 }
 .container {
-	background: #4d7ac9;
+	background: #578ae4;
 	margin: 100px auto;
 	padding: 30px 20px;
 	text-align: center;
