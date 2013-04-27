@@ -2,12 +2,12 @@
 	font-family: Helvetica;
 }
 
-p, h1 {
-	color:#1b361a;
+p, h1, input {
+	color: #182236;
 }
 
 body {
-	background: #4c8b4d;
+	background: #5a71f0;
 	vertical-align: middle;
 }
 
@@ -18,11 +18,10 @@ p {
 input {
 	font-size: 24px;
 	border: none;
-	border-bottom: 1px dotted #3e703a;
+	border-bottom: 1px dotted #273e5a;
 	background-color: transparent;
 	text-align: center;
 	outline: none;
-	color:#1b361a;
 }
 
 .error {
@@ -38,7 +37,7 @@ input {
 	box-sizing:border-box;
 }
 .container {
-	background: #8dac81;
+	background: #3c5e9c;
 	margin: 100px auto;
 	padding: 30px 20px;
 	text-align: center;
