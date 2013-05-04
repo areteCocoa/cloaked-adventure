@@ -6,7 +6,14 @@
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 	
 	<script>
+	
 		$(function() {
+			var container = $("div.container");
+			container.hide();
+			window.setTimeout(function(){
+				container.fadeIn(2000);
+			}, 1000)
+			/*
 			var header = $("p");
 			var body = $("body");
 			
@@ -15,7 +22,7 @@
 			});
 			header.click(function() {
 				rotation();
-			});
+			*/
 		});
 	</script>
 	
