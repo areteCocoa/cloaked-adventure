@@ -6,8 +6,9 @@ require 'koala'
 get '/' do
   if session[:user] != 'thomas'
     erb :index
+  else
+    redirect '/home'
   end
-  redirect '/home'
 end
 
 get '/login' do
