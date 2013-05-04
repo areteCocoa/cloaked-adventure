@@ -1,8 +1,13 @@
 require 'sinatra'
 require 'sinatra/reloader'
+require 'json'
+require 'koala'
 
 get '/' do
-  erb :index   
+  if session[:user] != 'thomas'
+    erb :index
+  end
+  redirect '/home'
 end
 
 get '/login' do
@@ -29,8 +34,9 @@ post '/login' do
   @password = params[:password]
   
   if @username == 'thomas'
-    if @password == 'ring'
-      erb :home
+    if @password == 'eulerpi'
+      session[:user] = 'thomas'
+      redirect '/home'
     else
       @error = "Wrong Password"
       erb :index
@@ -44,4 +50,20 @@ end
 get '/name' do
   @name = (params[:name] || "Nobody").downcase
   erb :name
+end
+
+get '/home' do
+  # return redirect '/' unless session[:user] == 'thomas'
+  @graph = Koala::Facebook::API.new
+  @picture = @graph.get_picture('thomasjring')
+  
+  # Make the image URL point to the large image
+  # 't' for small
+  # 's' for normal
+  # 'n' for large
+  # 'q' for square
+  size = 'n'
+  @picture[@picture.length - 5] = size
+  
+  erb :home
 end
